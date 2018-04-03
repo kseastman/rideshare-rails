@@ -1,17 +1,28 @@
 <h2>Driver Details</h2>
 <section class="info-box">
+<<<<<<< HEAD
   <article>
     <h3><%= @driver.name %></h3>
     <h4>Total Earnings:</h4>
+=======
+  <article >
+    <h3>Name: </h3>
+    <%= @driver.name %>
+
+    <h3>Total Earnings: </h3>
+>>>>>>> ke_v1_styling
     <%= "$ #{@driver.total_earnings}" %>
-  </article>
-  <article>
-    <h4>Average Rating:</h4>
+
+    <h3>Average Rating: </h3>
     <%= @driver.average_rating.round(1) %>
   </article>
-  <%= link_to "Edit", edit_driver_path(@driver) %>
-  <%= link_to("Delete", driver_path(@driver.id), method: :delete, data: { confirm: "Are you sure you want to delete: #{ @driver.name }?" }) %>
+
+  <ul>
+  <li><%= link_to "Edit", edit_driver_path(@driver) %><li>
+  <li><%= link_to("Delete", driver_path(@driver.id), method: :delete, data: { confirm: "Are you sure you want to delete: #{ @driver.name }?" }) %></li>
+  <ul>
 </section>
+
 <section class="trips">
   <h3> Driver Trips</h3>
   <%= render partial: "layouts/trip-list", locals: {model: @driver} %>

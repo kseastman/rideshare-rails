@@ -1,0 +1,13 @@
+<h1><%= page_title %></h1>
+
+<%= render partial: "error_messages", locals: {model: @passenger } %>
+
+<%= form_for @passenger do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :phone_num, "Phone number" %>
+  <%= f.text_field :phone_num %>
+
+  <%= f.submit %>
+<% end %>

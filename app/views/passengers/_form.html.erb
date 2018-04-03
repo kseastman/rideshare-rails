@@ -1,6 +1,6 @@
 <h1><%= page_title %></h1>
 
-<%= render partial: "error_messages", locals: {model: @passenger } %>
+<%= render partial: "layouts/error-messages", locals: {model: @passenger } %>
 
 <%= form_for @passenger do |f| %>
   <%= f.label :name %>

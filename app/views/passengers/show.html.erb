@@ -1,5 +1,22 @@
-<h1>Passenger Details</h1>
-<p>Name: <%= @passenger.name %></p>
-<p>Phone number: <%= @passenger.phone_num %></p>
-<%= link_to "Edit", edit_passenger_path(@passenger) %>
-<%= link_to "Delete", passenger_path(@passenger) %>
+<h2>Passenger Details</h2>
+
+<section class="info-box">
+
+  <article >
+    <h3>Name: </h3>
+    <%= @passenger.name %>
+
+    <h3>Total Cost: </h3>
+    <%= "$ #{@passenger.total_cost}" %>
+  </article>
+
+  <ul>
+    <li><%= link_to "Edit", edit_passenger_path(@passenger) %><li>
+    <li><%= link_to("Delete", passenger_path(@passenger.id), method: :delete, data: { confirm: "Are you sure you want to delete: #{ @passenger.name }?" }) %></li>
+  <ul>
+</section>
+
+<section class="trips">
+  <h3> Passenger Trips</h3>
+  <%= render partial: "layouts/trip-list", locals: {model: @passenger} %>
+</section>

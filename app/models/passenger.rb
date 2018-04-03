@@ -5,4 +5,13 @@ class Passenger < ApplicationRecord
 
   validates :name, presence: true
   validates :phone_num, presence: true
+
+  def total_cost
+    total = 0
+    self.trips.each do |trip|
+      total += trip.cost
+    end
+
+    return (total / 100).round(2)
+  end
 end

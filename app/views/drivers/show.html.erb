@@ -12,27 +12,7 @@
   <%= link_to("Delete", driver_path(@driver.id), method: :delete, data: { confirm: "Are you sure you want to delete: #{ @driver.name }?" }) %>
 </section>
 <section class="trips">
-  <table>
-    <th>Driver Trips</th>
-  <tr>
-    <th>Trip ID</th>
-    <th>Date</th>
-    <th>Passenger</th>
-    <th>Cost</th>
-    <th>Rating</th>
-  </tr>
+  <h3> Driver Trips</h3>
+  <%= render partial: "layouts/trip-list", locals: {model: @driver} %>
 
-<% @driver.trips.each do |trip| %>
-  <tr>
-    <td><%= link_to(trip.id, trip_path(trip))%></td>
-    <td><%= trip.date.strftime("%m/%d/%Y") %></td>
-    <% passenger = trip.passenger %>
-    <td><%= link_to(passenger.name, passenger_path(passenger)) %></td>
-    <td><%= "$ #{(trip.cost / 100).round(2)}" %></td>
-    <td><%= trip.rating %></td>
-  </tr>
-<% end %>
-</table>
-
-<br>
 </section>

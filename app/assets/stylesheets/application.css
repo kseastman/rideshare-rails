@@ -13,3 +13,66 @@
  *= require_tree .
  *= require_self
  */
+* {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  /* font-family: 'Bree Serif', serif; */
+  text-align: center;
+}
+
+h2 {
+  font-size: 4em;
+}
+
+#tb-trips {
+  width: 100%;
+  text-align: center;
+  line-height: 1.75em;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(26, 83%, 49%);
+}
+
+a:hover {
+  color: hsl(30, 9%, 12%)
+}
+
+#tb-trips tr:nth-child(odd) {
+  background-color: hsl(120, 9%, 89%);
+}
+
+#tb-trips tr:nth-child(even) {
+  background-color: hsla(120, 9%, 89%, .2);
+}
+
+.info-box {
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: space-around;
+  text-align: center;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding-top: 2rem;
+}
+
+.info-box ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: flex-end;
+}
+
+.info-box a {
+  display: inline-block;
+  text-align: center;
+  padding: 1rem 3rem;
+}
+
+ul a:hover {
+  background-color: hsla(30, 9%, 12%, .2);
+  color: hsl(26, 83%, 49%);
+}

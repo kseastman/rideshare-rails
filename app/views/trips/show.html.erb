@@ -1,0 +1,33 @@
+<h2>Trip Details</h2>
+
+<section class="info-box">
+
+  <ul>
+    <li><%= link_to "Edit", edit_trip_path(@trip) %><li>
+    <li><%= link_to("Delete", trip_path(@trip.id), method: :delete, data: { confirm: "Are you sure you want to delete: #{ @trip.id }?" }) %></li>
+  <ul>
+</section>
+
+<section class="trips">
+  <% trip = @trip %>
+  <table id ="tb-trips">
+  <tr>
+    <th>Trip ID</th>
+    <th>Date</th>
+    <th>Passenger</th>
+    <th>Driver</th>
+    <th>Cost</th>
+    <th>Rating</th>
+  </tr>
+  <tr>
+    <td><%= link_to(trip.id, trip_path(trip))%></td>
+    <td><%= trip.date.strftime("%m/%d/%Y") %></td>
+    <% passenger = trip.passenger %>
+    <td><%= link_to(passenger.name, passenger_path(passenger)) %></td>
+    <% driver = trip.driver %>
+    <td><%= link_to(driver.name, driver_path(driver)) %></td>
+    <td><%= "$ #{(trip.cost / 100).round(2)}" %></td>
+    <td><%= trip.rating %></td>
+  </tr>
+</table>
+</section>

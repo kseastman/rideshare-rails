@@ -9,10 +9,15 @@ class TripsController < ApplicationController
   end
 
   def create
-    trip = Trip.new(trip_params)
+    trip = Trip.new
+
+    trip.passenger_id = params[:passenger_id]
+    trip.driver_id = trip.find_driver.id
+    trip.date = trip.new_date
+    trip.cost = trip.new_cost
 
     if trip.save
-      redirect_to trips_path
+      redirect_to trip_path(trip)
     end
   end
 

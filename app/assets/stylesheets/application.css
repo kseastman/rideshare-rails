@@ -28,6 +28,19 @@ h2 {
   font-size: 4em;
 }
 
+nav > ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#tb-trips {
+  width: 100%;
+  text-align: center;
+  line-height: 1.75em;
+}
+
 a {
   text-decoration: none;
   color: hsl(26, 83%, 49%);

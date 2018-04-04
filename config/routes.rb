@@ -5,7 +5,7 @@ resources :passengers do
   resources :trips, only: [:create]
 end
 
-resources :trips do
+resources :trips, except: [:new] do
 end
 
 end

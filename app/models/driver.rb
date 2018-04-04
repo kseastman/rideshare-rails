@@ -36,11 +36,22 @@ class Driver < ApplicationRecord
   end
 
   def available?
+    return true if self.trips.empty?
+
     _trips.last.rating ? true : false
   end
 
+  def no_trips?
+    if self.trips.empty?
+      return true
+    end
+    return false
+  end
+
   def last_trip_date
+    unless no_trips?
       return _trips.last.date
+    end
   end
 
 end

@@ -30,4 +30,17 @@ class Driver < ApplicationRecord
     return average
   end
 
+  def _trips
+    my_trips = self.trips.order(:date)
+    return my_trips
+  end
+
+  def available?
+    _trips.last.rating ? true : false
+  end
+
+  def last_trip_date
+      return _trips.last.date
+  end
+
 end

@@ -15,19 +15,23 @@ class Trip < ApplicationRecord
   def find_driver
     drivers = Driver.all
     available_driver = drivers.first
-
-    unless available_driver.trips
-      return available
+    
+    if available_driver.no_trips?
+      return available_driver
     end
 
     drivers.each do |driver|
       if driver.available?
-        if driver.last_trip_date < available.last_trip_date
-          available = driver
+        if driver.no_trips?
+          available_driver = driver
+
+        elsif driver.last_trip_date < available_driver.last_trip_date
+          available_driver = driver
+
         end
       end
     end
-    return available.id
+    return available_driver
   end
 
 end

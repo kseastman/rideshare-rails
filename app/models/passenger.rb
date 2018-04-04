@@ -14,4 +14,8 @@ class Passenger < ApplicationRecord
 
     return (total / 100).round(2)
   end
+
+  def request_trip
+    return self.id
+  end
 end

@@ -3,7 +3,7 @@ class Trip < ApplicationRecord
   belongs_to :passenger
 
   validates :rating,
-    numericality: {only_integer: true,
+    numericality: {allow_nil: true,
     greater_than_or_equal_to: 1, less_than_or_equal_to: 5}
 
   paginates_per 20

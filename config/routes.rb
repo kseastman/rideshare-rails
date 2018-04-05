@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
-resources :drivers
+  root 'trips#index'
 
-resources :passengers do
-  resources :trips, only: [:create]
-end
+  resources :drivers
 
-resources :trips, except: [:new]
+  resources :passengers do
+    resources :trips, only: [:create]
+  end
+
+  resources :trips, except: [:new]
 
 end

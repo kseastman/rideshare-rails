@@ -30,7 +30,7 @@ class PassengersController < ApplicationController
     @passenger.assign_attributes(passenger_params)
 
     if @passenger.save
-      redirect_to passenger_path(passenger)
+      redirect_to passenger_path(@passenger)
     else
       render :edit
     end

@@ -1,14 +1,14 @@
 <% if model.errors.messages.any? %>
-<section id="error-messages">
-<h3>There were some problems</h3>
-<ul>
-  <% model.errors.messages.each do |field, problem| %>
-  <li><strong><%= field.capitalize%></strong>
-    <% problem.each do |message| %>
-    <%= message %>
+  <section id="error-messages">
+  <h3>There were some problems</h3>
+  <ul>
+    <% model.errors.messages.each do |field, problem| %>
+    <li><strong><%= field.capitalize%></strong>
+      <% problem.each do |message| %>
+      <%= message %>
+      <% end %>
+    </li>
     <% end %>
-  </li>
-  <% end %>
-</ul>
-</section>
+  </ul>
+  </section>
 <% end %>

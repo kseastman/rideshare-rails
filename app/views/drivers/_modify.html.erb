@@ -1,12 +1,15 @@
+<h1><%= page_title %></h1>
+
+<%= render partial: "layouts/error-messages", locals: {model: @driver, class: "error-handling"} %>
 
 <section id="modify-input">
-<%= form_for @driver do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= form_for @driver do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-  <%= f.label :vin %>
-  <%= f.text_field :vin %>
+    <%= f.label :vin %>
+    <%= f.text_field :vin %>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.submit %>
+  <% end %>
 </section>

@@ -6,57 +6,64 @@ class Driver < ApplicationRecord
   validates :name, presence: true
   validates :vin, presence: true
 
+  def no_trips?
+    return self.trips.empty?
+  end
+
+  def completed_trips
+    completed_trips = self.trips.select do |trip|
+      trip.rating != nil
+    end
+
+    return completed_trips
+  end
+
   def total_earnings
     subtotal = 0
-    fee = 1.85
-    self.trips.each do |trip|
-      if trip.cost.is_a? Numeric
+    fee = 1.65
+    driver_share = 0.8
+
+    trips_with_cost = self.trips.select do |trip|
+      trip.cost != nil
+    end
+
+    trips_with_cost.each do |trip|
+      if fee > trip.cost
         subtotal += trip.cost
+      else
+        subtotal += (trip.cost - fee)
       end
     end
-    subtotal /= 100
-    total = (subtotal - fee) * 0.8
+    total = subtotal * driver_share / 100
 
     return total.round(2)
   end
 
   def average_rating
-    rating = 0.0
-    denominator = 0
-    self.trips.each do |trip|
-      if trip.rating.is_a? Numeric
-        rating += trip.rating
-        denominator += 1
-      end
+    return "---" if completed_trips.empty?
+
+    total = 0.0
+    completed_trips.each do |trip|
+      total += trip.rating
     end
-    average = rating / denominator
+    average = total / completed_trips.length
 
-    return average
+    return average.round(1)
   end
 
-  def _trips
-    my_trips = self.trips.order(:date)
-    return my_trips
-  end
-
-  def tripcount
-    return _trips.count
+  def ordered_trips
+    return self.trips.order(:date)
   end
 
   def available?
     return true if no_trips?
 
-    _trips.last.rating ? true : false
-  end
-
-  def no_trips?
-    return self.trips.empty?
+    return ordered_trips.last.rating ? true : false
   end
 
   def last_trip_date
     unless no_trips?
-      return _trips.last.date
+      return ordered_trips.last.date
     end
   end
-
 end

@@ -50,10 +50,7 @@ class Driver < ApplicationRecord
   end
 
   def no_trips?
-    if self.trips.empty?
-      return true
-    end
-    return false
+    return self.trips.empty?
   end
 
   def last_trip_date

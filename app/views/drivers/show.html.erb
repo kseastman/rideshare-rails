@@ -14,7 +14,7 @@
 
   <ul>
   <li><%= link_to "Edit", edit_driver_path(@driver) %><li>
-  <li><%= link_to("Delete", driver_path(@driver.id), method: :delete, data: { confirm: "Are you sure you want to delete: #{ @driver.name }?" }) %></li>
+  <li><%= link_to("Delete", driver_path(@driver.id), method: :delete, data: { confirm: "Are you sure you want to delete: #{ @driver.name }? \nThis will also delete all the driver's trips." }) %></li>
   <ul>
 </section>
 

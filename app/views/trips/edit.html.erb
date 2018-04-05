@@ -1,23 +1,29 @@
 <h1>Edit Trip</h1>
 
 <%= render partial: "layouts/error-messages", locals: {model: @trip } %>
+<table id ="tb-trips">
+<tr>
+  <th>Trip ID</th>
+  <th>Date</th>
+  <th>Passenger</th>
+  <th>Driver</th>
+  <th>Cost</th>
+  <th>Rating</th>
+</tr>
+<tr>
+<%= render @trip %>
+</table>
 
 <%= form_for @trip do |f| %>
 
-  <%= f.label :passenger_id, "Passenger ID" %>
-  <%= f.number_field :passenger_id %>
 
-  <%= f.label :driver_id, "Driver ID" %>
-  <%= f.number_field :driver_id %>
-
-  <%= f.label :date%>
-  <%= f.date_field :date %>
+  <% f.hidden_field :passenger_id %>
+  <% f.hidden_field :driver_id %>
+  <% f.hidden_field :date %>
 
   <%= f.label :rating%>
   <%= f.number_field :rating %>
-
-  <%= f.label :cost%>
-  <%= f.number_field :cost %>
+  <% f.hidden_field :cost %>
 
   <%= f.submit %>
 <% end %>

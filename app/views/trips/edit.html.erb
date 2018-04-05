@@ -1,16 +1,6 @@
 <h1>Edit Trip</h1>
 
 <%= render partial: "layouts/error-messages", locals: {model: @trip } %>
-<table id ="tb-trips">
-<tr>
-  <th>Trip ID</th>
-  <th>Date</th>
-  <th>Passenger</th>
-  <th>Driver</th>
-  <th>Cost</th>
-  <th>Rating</th>
-</tr>
-<tr>
 <%= render @trip %>
 </table>
 

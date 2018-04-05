@@ -1,14 +1,14 @@
 
 
 
-<% trip = @trip %>
 
-  <td><%= link_to(trip.id, trip_path(trip))%></td>
-  <td><%= trip.date.strftime("%m/%d/%Y") %></td>
-  <% passenger = trip.passenger %>
-  <td><%= link_to(passenger.name, passenger_path(passenger)) %></td>
-  <% driver = trip.driver %>
-  <td><%= link_to(driver.name, driver_path(driver)) %></td>
-  <td><%= "$ #{(trip.cost / 100).round(2)}" %></td>
-  <td><%= trip.rating %></td>
-</tr>
+<article class="list-row">
+  <span><%= link_to(trip.id, trip_path(trip))%></span>
+  <span><%= trip.date.strftime("%m/%d/%Y") %></span>
+     <% passenger = trip.passenger %>
+  <span class="name"><%= link_to(passenger.name, passenger_path(passenger)) %></span>
+     <% driver = trip.driver %>
+  <span class="name"><%= link_to(driver.name, driver_path(driver)) %></span>
+  <span><%= "$ #{(trip.cost / 100).round(2)}" %></span>
+  <span><%= trip.rating %></span>
+</article>

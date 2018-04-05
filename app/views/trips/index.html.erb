@@ -2,11 +2,15 @@
 
 <ul>
 <%= paginate @trips %>
-<% @trips.each do |trip| %>
-  <li>
-    <strong><%= link_to(trip.id, trip_path(trip)) %></strong>
-    <%= link_to("Edit", edit_trip_path(trip)) %>
-    <%= link_to("Delete", trip_path(trip), method: :delete, data: { confirm: "Are you sure you want to delete: #{ trip.id }?" }) %>
-  </li>
-<% end %>
+<article class="list-row heading-row">
+
+    <h3><span>ID</span></h3>
+    <h3><span>Date</span></h3>
+    <h3><span>Passenger</span></h3>
+    <h3><span>Driver</span></h3>
+    <h3><span>Cost</span></h3>
+    <h3><span>Rating</span></h3>
+
+</article>
+<%= render partial: "trip", collection: @trips %>
 </ul>

@@ -1,12 +1,7 @@
-<h1>All Drivers</h1>
-
+<h1> All Drivers </h1>
 <ul>
 <%= paginate @drivers %>
-<% @drivers.each do |driver| %>
-  <li>
-    <strong><%= link_to(driver.name, driver_path(driver)) %></strong>
-    <%= link_to("Edit", edit_driver_path(driver)) %>
-    <%= link_to("Delete", driver_path(driver.id), method: :delete, data: { confirm: "Are you sure you want to delete: #{ driver.name }? \nThis will also delete all the driver's trips." }) %>
-  </li>
-<% end %>
 </ul>
+<section class="list">
+<%= render partial: "driver", collection: @drivers %>
+</section>

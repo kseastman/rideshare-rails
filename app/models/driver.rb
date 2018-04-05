@@ -10,7 +10,9 @@ class Driver < ApplicationRecord
     subtotal = 0
     fee = 1.85
     self.trips.each do |trip|
-      subtotal += trip.cost
+      if trip.cost.is_a? Numeric
+        subtotal += trip.cost
+      end
     end
     subtotal /= 100
     total = (subtotal - fee) * 0.8
@@ -20,10 +22,12 @@ class Driver < ApplicationRecord
 
   def average_rating
     rating = 0.0
-    denominator = self.trips.count
-
+    denominator = 0
     self.trips.each do |trip|
-      rating += trip.rating
+      if trip.rating.is_a? Numeric
+        rating += trip.rating
+        denominator += 1
+      end
     end
     average = rating / denominator
 
@@ -33,6 +37,10 @@ class Driver < ApplicationRecord
   def _trips
     my_trips = self.trips.order(:date)
     return my_trips
+  end
+
+  def tripcount
+    return _trips.count
   end
 
   def available?

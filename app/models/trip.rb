@@ -2,6 +2,10 @@ class Trip < ApplicationRecord
   belongs_to :driver
   belongs_to :passenger
 
+  validates :rating,
+    numericality: {only_integer: true,
+    greater_than_or_equal_to: 1, less_than_or_equal_to: 5}
+
   paginates_per 20
 
   def new_date
@@ -15,7 +19,7 @@ class Trip < ApplicationRecord
   def find_driver
     drivers = Driver.all
     available_driver = drivers.first
-    
+
     if available_driver.no_trips?
       return available_driver
     end

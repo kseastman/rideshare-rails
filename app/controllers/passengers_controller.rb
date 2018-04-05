@@ -37,14 +37,9 @@ class PassengersController < ApplicationController
   end
 
   def destroy
-    @passenger = Passenger.find(params[:id])
+    Passenger.destroy(params[:id])
 
-    if @passenger.ongoing_trip?
-      redirect_to driver_path
-    else
-      @passenger.destroy
-      redirect_to passengers_path
-    end
+    redirect_to passengers_path
   end
 
   private

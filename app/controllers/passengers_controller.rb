@@ -40,7 +40,7 @@ class PassengersController < ApplicationController
     @passenger = Passenger.find(params[:id])
 
     if @passenger.ongoing_trip?
-      raise StandardError.new("You cannot delete a passenger with an ongoing trip. Please provide a rating to complete a trip.")
+      redirect_to driver_path
     else
       @passenger.destroy
       redirect_to passengers_path

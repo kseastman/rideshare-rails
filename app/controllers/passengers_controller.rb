@@ -37,10 +37,14 @@ class PassengersController < ApplicationController
   end
 
   def destroy
+    @passenger = Passenger.find(params[:id])
 
-    Passenger.destroy(params[:id])
-
-    redirect_to passengers_path
+    if @passenger.ongoing_trip?
+      raise StandardError.new("You cannot delete a passenger with an ongoing trip. Please provide a rating to complete a trip.")
+    else
+      @passenger.destroy
+      redirect_to passengers_path
+    end
   end
 
   private

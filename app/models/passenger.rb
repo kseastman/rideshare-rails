@@ -1,5 +1,5 @@
 class Passenger < ApplicationRecord
-  has_many :trips
+  has_many :trips, dependent: :destroy
 
   validates :name, presence: true
   validates :phone_num, presence: true
@@ -15,5 +15,20 @@ class Passenger < ApplicationRecord
     end
 
     return (total / 100).round(2)
+  end
+
+  # def ordered_trips
+  #   return false if self.trips.empty?
+  #   return self.trips.order(:date)
+  # end
+
+  def ongoing_trip?
+    return false if self.trips.empty?
+
+    self.trips.each do |trip|
+      return false if trip.rating.nil?
+    end
+
+    return true
   end
 end

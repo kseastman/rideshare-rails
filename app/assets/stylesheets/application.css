@@ -51,7 +51,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  margin: auto 5%;
+  margin: 5%;
   justify-content: space-around;
   width: 90%;
 }
@@ -116,7 +116,9 @@ a:hover {
 }
 }
 
-
+#trip_rating {
+  width: 2rem;
+}
 
 /* .name a {
   width: 20%;
@@ -139,19 +141,12 @@ a:hover {
   text-align: left;
 }
 
-.heading-row {
-  margin: 4vh 2vw;
-}
-
 .list-row section, .list-row li {
   /* width: 20vw; */
-  height: 8vh;
+  height: 3vh;
   margin: 0 1vw;
   justify-content: flex-end;
-}
-
-.list-row section:first-of-type, .list-row section:last-of-type {
-  width: 5vw;
+  width: 33%;
 }
 
 
@@ -190,12 +185,12 @@ a:hover {
   line-height: 1.75em;
 }
 
-#tb-trips:nth-child(odd) {
-  background-color: hsl(120, 9%, 89%);
+#tb-trips tr:nth-child(odd) {
+  background-color: hsla(120, 9%, 89%, .2);
 }
 
-#tb-trips:nth-child(even) {
-  background-color: hsla(120, 9%, 89%, .2);
+#tb-trips tr:nth-child(even) {
+  background-color: hsla(120, 9%, 89%, .4);
 }
 
 

@@ -6,14 +6,11 @@
 
 <%= form_for @trip do |f| %>
 
+  <%= f.label :driver, "Change Driver" %>
+  <%= f.select :driver_id, Driver.all.map{ |driv| [driv.name, driv.id] } %>
 
-  <% f.hidden_field :passenger_id %>
-  <% f.hidden_field :driver_id %>
-  <% f.hidden_field :date %>
-
-  <%= f.label :rating%>
+  <%= f.label :rating, "Edit Rating" %>
   <%= f.number_field :rating %>
-  <% f.hidden_field :cost %>
 
   <%= f.submit %>
 <% end %>

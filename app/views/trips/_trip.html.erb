@@ -7,7 +7,7 @@
     <%= link_to(trip.id, trip_path(trip))%>
   </section>
 
-  <section class="r-cell c2-fr">
+  <section class="r-cell">
     <%= trip.date.strftime("%m/%d/%Y") %>
   </section>
 
@@ -22,11 +22,19 @@
     <% driver = trip.driver %>
     <%= link_to(driver.name, driver_path(driver)) %>
   </section>
+
   <section class="r-cell">
     <%= "$ #{(trip.cost / 100).round(2)}" %>
   </section>
-  <section class="r-cell">
 
+  <section class="r-cell">
+    <% if trip.rating %>
     <%= trip.rating %>
+    <% else %>
+    <%= form_for trip do |f| %>
+    <%= f.number_field(:rating, in: 1..5) %>
+    <%= f.submit("Rate your trip") %>
+    <% end %>
+    <% end %>
   </section>
 <!-- </article> -->

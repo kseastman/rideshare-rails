@@ -4,4 +4,4 @@
   <%= paginate @drivers %>
 </ul>
 
-<%= render partial: "driver", collection: @drivers %>
+<%= render partial: "layouts/details", collection: @drivers, as: :item %>

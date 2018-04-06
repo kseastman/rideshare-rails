@@ -4,4 +4,4 @@
 <%= paginate @passengers %>
 </ul>
 
-<%= render partial: "passenger", collection: @passengers %>
+<%= render partial: "layouts/details", collection: @passengers, as: :item %>

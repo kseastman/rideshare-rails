@@ -18,7 +18,12 @@ class DriversController < ApplicationController
   end
 
   def show
-    @driver = Driver.find(params[:id])
+     driver = Driver.find(params[:id])
+    if driver
+      @driver = driver
+    else
+      redirect_to new_driver_path
+    end
   end
 
   def edit

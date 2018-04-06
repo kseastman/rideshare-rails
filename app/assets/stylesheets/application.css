@@ -120,6 +120,17 @@ a:hover {
   width: 2rem;
 }
 
+[id*="edit_trip_"] > input[type="submit"] {
+  background-color: hsl(26, 83%, 49%);
+  margin: 1em auto;
+  padding: 1em auto;
+  border-radius: 8%;
+  border: solid .5rem hsla(25, 84%, 62%, 0.1);
+  color: hsla(0, 0%, 100%, 1);
+  font-weight: bold;
+}
+
+
 /* .name a {
   width: 20%;
 } */

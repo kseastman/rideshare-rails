@@ -1,6 +1,0 @@
-<ul class="list-row">
-  <li><%= link_to "#{passenger.name}", passenger_path(passenger) %></li>
-  <li>Total Trips: <%= passenger.trips.count %></li>
-  <li><%= link_to "Edit", edit_passenger_path(passenger) %>
-  <%= link_to("Delete", passenger_path(passenger.id), method: :delete, data: { confirm: "Are you sure you want to delete: #{ passenger.name }? This will also delete all the passenger's trips." }) %></li>
-</ul>

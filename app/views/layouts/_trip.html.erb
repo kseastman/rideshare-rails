@@ -24,7 +24,7 @@
   </section>
 
   <section class="r-cell">
-    <%= "$ #{(trip.cost / 100).round(2)}" %>
+    <%= cents_to_dollars(trip.cost) %>
   </section>
 
   <section class="r-cell">

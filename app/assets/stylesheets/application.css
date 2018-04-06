@@ -191,22 +191,11 @@ width: 20%;
   background-color: hsla(30, 9%, 12%, .08);
   color: hsl(26, 83%, 49%)
 }
-/* Trip Table Styling */
 
-#tb-trips {
-  width: 100%;
-  text-align: center;
-  line-height: 1.75em;
+
+.trips {
+  margin-top: 8vh;
 }
-
-#tb-trips tr:nth-child(odd) {
-  background-color: hsla(120, 9%, 89%, .2);
-}
-
-#tb-trips tr:nth-child(even) {
-  background-color: hsla(120, 9%, 89%, .4);
-}
-
 
 /* Info Box Styling */
 .info-box {

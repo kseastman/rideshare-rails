@@ -1,15 +1,7 @@
-<h1>All Trips</h1>
 
-<ul>
-<%= paginate @trips %>
-</ul>
-<article class="r-table col-6">
   <section class="r-cell header">ID</section>
   <section class="r-cell header">Date</section>
   <section class="r-cell c2-fr header">Passenger</section>
   <section class="r-cell c2-fr header">Driver</section>
   <section class="r-cell header">Cost</section>
   <section class="r-cell header">Rating</section>
-
-<%= render partial: "layouts/trip", collection: @trips %>
-</article>

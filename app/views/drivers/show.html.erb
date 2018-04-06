@@ -20,6 +20,10 @@
 
 <section class="trips">
   <h3> Driver Trips</h3>
-  <%= render partial: "layouts/trip-list", locals: {model: @driver} %>
+
+  <article class="r-table col-6">
+    <%= render partial: "layouts/table" %>
+    <%= render partial: "layouts/trip", collection: @trips %>
+  </article>
 
 </section>

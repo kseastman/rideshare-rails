@@ -19,5 +19,10 @@
 
 <section class="trips">
   <h3> Passenger Trips</h3>
-  <%= render partial: "layouts/trip-list", locals: {model: @passenger} %>
+
+  <article class="r-table col-6">
+    <%= render partial: "layouts/table" %>
+    <%= render partial: "layouts/trip", collection: @trips %>
+  </article>
+
 </section>

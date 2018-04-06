@@ -21,6 +21,7 @@ class DriversController < ApplicationController
      driver = Driver.find(params[:id])
     if driver
       @driver = driver
+      @trips = driver.trips
     else
       redirect_to new_driver_path
     end

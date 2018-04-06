@@ -1,10 +1,13 @@
 <h1>Edit Trip</h1>
 
 <%= render partial: "layouts/error-messages", locals: {model: @trip } %>
-<%= render @trip %>
-</table>
 
-<%= form_for @trip do |f| %>
+<article class="r-table col-6">
+  <%= render partial: "layouts/table" %>
+<%= render partial: "layouts/trip", object: @trip %>
+</article>
+
+<%= form_for @trip, html: {class: "modify-input"} do |f| %>
 
   <%= f.label :driver, "Change Driver" %>
   <%= f.select :driver_id, Driver.all.map{ |driv| [driv.name, driv.id] } %>

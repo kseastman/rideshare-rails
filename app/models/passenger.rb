@@ -14,7 +14,7 @@ class Passenger < ApplicationRecord
       end
     end
 
-    return (total / 100).round(2)
+    return total
   end
 
   def ongoing_trip?

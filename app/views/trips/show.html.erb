@@ -2,14 +2,8 @@
 
 <section class="info-box">
   <article class="r-table col-6">
-    <section class="r-cell header">ID</section>
-    <section class="r-cell header">Date</section>
-    <section class="r-cell c2-fr header">Passenger</section>
-    <section class="r-cell c2-fr header">Driver</section>
-    <section class="r-cell header">Cost</section>
-    <section class="r-cell header">Rating</section>
-
-  <%= render @trip %>
+  <%= render partial: "layouts/table"%>
+  <%= render partial: "layouts/trip", object: @trip %>
 </article>
   <ul>
     <p><%= link_to "Edit", edit_trip_path(@trip) %><p>

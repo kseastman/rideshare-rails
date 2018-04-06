@@ -20,7 +20,7 @@ class Driver < ApplicationRecord
 
   def total_earnings
     subtotal = 0
-    fee = 1.65
+    fee = 165
     driver_share = 0.8
 
     trips_with_cost = self.trips.select do |trip|
@@ -34,9 +34,9 @@ class Driver < ApplicationRecord
         subtotal += (trip.cost - fee)
       end
     end
-    total = subtotal * driver_share / 100
+    total = subtotal * driver_share
 
-    return total.round(2)
+    return total
   end
 
   def average_rating

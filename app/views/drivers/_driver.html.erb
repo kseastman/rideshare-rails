@@ -1,7 +1,7 @@
 
 <ul class="list-row">
   <li><%= link_to "#{driver.name}", driver_path(driver) %></li>
-  <li>Rating: <%= driver.average_rating.round(1) %></li>
+  <li>Rating: <%= driver.average_rating %></li>
   <li><%= link_to "Edit", edit_driver_path(driver) %>
   <%= link_to("Delete", driver_path(driver.id), method: :delete, data: { confirm: "Are you sure you want to delete: #{ driver.name }? This will also delete all the driver's trips." }) %></li>
 </ul>

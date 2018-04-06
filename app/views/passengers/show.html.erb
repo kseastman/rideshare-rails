@@ -7,7 +7,7 @@
     <%= @passenger.name %>
 
     <h3>Total Cost: </h3>
-    <%= "$ #{@passenger.total_cost}" %>
+    <%= cents_to_dollars(@passenger.total_cost) %>
   </article>
 
   <ul>

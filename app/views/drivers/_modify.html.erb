@@ -2,8 +2,8 @@
 
 <%= render partial: "layouts/error-messages", locals: {model: @driver, class: "error-handling"} %>
 
-<section id="modify-input">
-  <%= form_for @driver do |f| %>
+
+  <%= form_for @driver, html: {class: "modify-input"} do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
 
@@ -12,4 +12,3 @@
 
     <%= f.submit %>
   <% end %>
-</section>

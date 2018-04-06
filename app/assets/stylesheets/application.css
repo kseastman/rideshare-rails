@@ -121,7 +121,8 @@ a:hover {
   width: 2rem;
 }
 
-[id*="edit_trip_"] > input[type="submit"] {
+/* [id*="edit_trip_"] >  */
+input[type="submit"] {
   background-color: hsl(26, 83%, 49%);
   margin: 1em auto;
   padding: 1em auto;
@@ -251,10 +252,16 @@ width: 20%;
 }
 
 /* Input Form */
-#modify-input {
-  background-color: lightblue;
+.modify-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
+.modify-input > * {
+  margin: 1vh 0;
+}
 /* Flex Dropdown Menu */
 
 .main-navigation{

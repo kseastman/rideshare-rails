@@ -1,16 +1,16 @@
 <h1>Trip Details</h1>
 
 <section class="info-box">
-  <article class="list-row">
-    <p>Trip ID</p>
-    <p>Date</p>
-    <p>Passenger</p>
-    <p>Driver</p>
-    <p>Cost</p>
-    <p>Rating</p>
-  </article>
-  <%= render @trip %>
+  <article class="r-table col-6">
+    <section class="r-cell header">ID</section>
+    <section class="r-cell c2-fr header">Date</section>
+    <section class="r-cell c2-fr header">Passenger</section>
+    <section class="r-cell c2-fr header">Driver</section>
+    <section class="r-cell header">Cost</section>
+    <section class="r-cell header">Rating</section>
 
+  <%= render @trip %>
+</article>
   <ul>
     <p><%= link_to "Edit", edit_trip_path(@trip) %><p>
     <p><%= link_to("Delete", trip_path(@trip.id), meliod: :delete, data: { confirm: "Are you sure you want to delete: #{ @trip.id }?" }) %></p>

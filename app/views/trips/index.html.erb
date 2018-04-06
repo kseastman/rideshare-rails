@@ -2,15 +2,14 @@
 
 <ul>
 <%= paginate @trips %>
-<article class="list-row heading-row">
-
-    <h3><span>ID</span></h3>
-    <h3><span>Date</span></h3>
-    <h3><span>Passenger</span></h3>
-    <h3><span>Driver</span></h3>
-    <h3><span>Cost</span></h3>
-    <h3><span>Rating</span></h3>
-
-</article>
-<%= render partial: "trip", collection: @trips %>
 </ul>
+<article class="r-table col-6">
+  <section class="r-cell header">ID</section>
+  <section class="r-cell c2-fr header">Date</section>
+  <section class="r-cell c2-fr header">Passenger</section>
+  <section class="r-cell c2-fr header">Driver</section>
+  <section class="r-cell header">Cost</section>
+  <section class="r-cell header">Rating</section>
+
+<%= render partial: "trip", collection: @trips %>
+</article>

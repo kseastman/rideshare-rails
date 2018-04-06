@@ -45,6 +45,83 @@ a:hover {
   color: hsl(30, 9%, 12%)
 }
 
+
+/* Flexbox Table Styling */
+.r-table {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: auto 5%;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.r-cell {
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 100%;
+  padding: 0.8em 1.2em;
+  overflow: hidden;
+  list-style: none;
+  border: solid 3px white;
+  background-color: hsla(12, 11%, 91%, .2);
+  text-align: center;
+}
+
+.r-cell.header {
+  text-align: center;
+  font-weight: 400;
+  background-color: hsla(12, 11%, 91%, .4);
+}
+
+
+
+/* Flexbox Column Sizing */
+/* =========================== */
+[class*="col-"] > .r-cell {
+  width: 100%;
+}
+
+[class*="col-"] > .header {
+  width: 100%;
+  /* visibility: hidden; */
+  display: none;
+}
+
+.r-cell:nth-child(6n+7) {
+  margin-top: 5vh;
+  background-color: hsla(12, 11%, 91%, .4);
+}
+
+@media only screen and (min-width: 768px) {
+[class*="col-"] > .header {
+    /* visibility: visible; */
+    display: block;
+  }
+
+.col-2 > .r-cell { width: 50%}
+.col-3 > .r-cell { width: 33.33%}
+.col-4 > .r-cell { width: 25%}
+.col-5 > .r-cell { width: 20%}
+.col-6 > .r-cell { width: 13.2%}
+.col-7 > .r-cell { width: 14.2%}
+
+.r-cell:nth-child(6n+7) {
+  margin-top: 0;
+  background-color: hsla(12, 11%, 91%, .2);
+}
+
+.col-6 > .r-cell.c2-fr {
+  width: 18%;
+}
+}
+
+
+
+/* .name a {
+  width: 20%;
+} */
+
 .list {
   margin-top: 6vh;
   display: flex;
@@ -58,7 +135,7 @@ a:hover {
   flex-direction: row;
   justify-content: space-around;
   width: 90%;
-  margin: 0 2rem;
+  /* margin: 0 2rem; */
   text-align: left;
 }
 
@@ -66,16 +143,18 @@ a:hover {
   margin: 4vh 2vw;
 }
 
-.list-row span, .list-row li {
+.list-row section, .list-row li {
   /* width: 20vw; */
   height: 8vh;
   margin: 0 1vw;
   justify-content: flex-end;
 }
 
-.list-row span:first-of-type {
-  width: 2vw;
+.list-row section:first-of-type, .list-row section:last-of-type {
+  width: 5vw;
 }
+
+
 
 .list-row li:last-child{
   display: flex;

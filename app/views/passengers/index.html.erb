@@ -1,7 +1,7 @@
 <h1>All Passengers</h1>
 
 <ul>
-<%= paginate @passengers %>
+  <%= paginate @passengers %>
 </ul>
 
 <%= render partial: "layouts/details", collection: @passengers, as: :item %>

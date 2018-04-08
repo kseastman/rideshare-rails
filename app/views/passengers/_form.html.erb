@@ -2,12 +2,12 @@
 
 <%= render partial: "layouts/error-messages", locals: { model: @passenger } %>
 
-  <%= form_for @passenger, html: {class: "modify-input"} do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<%= form_for @passenger, html: {class: "modify-input"} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-    <%= f.label :phone_num, "Phone number" %>
-    <%= f.text_field :phone_num %>
+  <%= f.label :phone_num, "Phone number" %>
+  <%= f.text_field :phone_num %>
 
-    <%= f.submit %>
-  <% end %>
+  <%= f.submit %>
+<% end %>

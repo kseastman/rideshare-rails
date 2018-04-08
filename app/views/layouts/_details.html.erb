@@ -2,5 +2,5 @@
   <li><%= link_to "#{item.name}", item %></li>
   <li>Total Trips: <%= item.trips.count %></li>
   <li><%= link_to "Edit", item %>
-  <%= link_to("Delete", item, method: :delete, data: { confirm: "Are you sure you want to delete: #{ item.name }? This will also delete all of #{item.name}'s trips." }) %></li>
+  <%= link_to("Delete", item, method: :delete, data: { confirm: "Are you sure you want to delete: #{ item.name }? \nThis will also delete all of #{item.name}'s trips." }) %></li>
 </ul>

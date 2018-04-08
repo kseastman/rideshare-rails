@@ -4,13 +4,10 @@
   <article class="r-table col-6">
   <%= render partial: "layouts/table"%>
   <%= render partial: "layouts/trip", object: @trip %>
-</article>
+  </article>
+
   <ul>
     <p><%= link_to "Edit", edit_trip_path(@trip) %><p>
     <p><%= link_to("Delete", trip_path(@trip.id), method: :delete, data: { confirm: "Are you sure you want to delete: #{ @trip.id }?" }) %></p>
   <ul>
-</section>
-
-<section class="trips">
-
 </section>

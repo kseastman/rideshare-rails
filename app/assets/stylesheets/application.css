@@ -256,13 +256,17 @@ width: 20%;
 .main-navigation{
   border-top:1px solid #ddd;
   border-bottom:1px solid #ddd;
-  margin:2em;
+  margin: 0;
 }
 
 .menu {
   display:flex;
   flex-wrap: wrap row;
-  list-style-type: none;}
+  list-style-type: none;
+  margin: 0;
+
+}
+
 
 
   .menu li{
@@ -276,32 +280,37 @@ width: 20%;
     display:block;
     text-align:center;
     text-decoration:none;
-    color:#777;
+    color: hsl(29, 2%, 16%);
     padding:1rem;
   }
 
   .menu li a:hover{
-    background:#777;
-    color:#fff;
+    background:hsl(0, 0%, 46%);
+    color: hsl(0, 0%, 100%)
   }
 
 
   @media (min-width: 800px) {
     .menu{
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: flex-end;
+      margin-right: 2em;
     }
-  }
 
-  /* .menu-item-has-children > a:after{
-  font-family:'Genericons';
-  content: '\f431';
-  padding:1px;
-  } */
+    .menu li:first-of-type {
+      align-self: flex-start;
+    }
+
+  .menu-item-has-children > a:after{
+  font-size: .75em;
+  content: '▼';
+  padding: .5em;
+  }
 
   nav ul ul {
     display: none;
   }
+}
 
   @media (min-width: 800px) {
     nav ul ul {
@@ -312,14 +321,15 @@ width: 20%;
 
   nav ul li:hover > ul {
     display:block;
-    color:hsl(0, 0%, 100%);
-    padding-left:2rem;
+    color: hsl(26, 83%, 49%);
+    padding-left: 0;
   }
 
   @media (min-width: 800px) {
     nav ul li:hover > ul {
       padding-left:0;
       background:hsl(0, 0%, 46%);
+      color: hsl(26, 83%, 49%)
     }
 
     nav ul li:hover > ul a{
